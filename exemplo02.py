@@ -247,7 +247,17 @@ try:
     plt.subplot(2, 2, 2) 
     
     plt.hist(array_roubo_veiculo, bins=198)
-  
+
+    contagens, limites = np.histogram(array_roubo_veiculo, bins= 198)
+    print('\nFaixas do Histograma')
+    for i in range(len(contagens)):
+        if contagens[i] > 0:
+            print(
+                f'Faixa {i+1}: '
+                f'{limites [i]:.0f} até {limites[ i+1]:.0f} roubos: '
+                f'=> {contagens[i]} municipios'
+                )
+    
 
 
 # POSIÇÃO 3 - BOXPLT
